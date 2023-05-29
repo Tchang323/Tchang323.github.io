@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>樂透遊戲</h1>
-  <h2>--遊戲規則如下--</h2>
+  <h2>--遊戲規則如下--</h2>  <!--1-->
   <h3 id = "t3">您可在網頁上自行輸入 3 個號碼 (範圍是數字 1~10)，且值不得重複；當您輸入 3 個號碼並按下開獎按鈕後，系統會開始比對您輸入的號碼及得獎號碼 (不管排列先後順序)，全部對中時為頭獎，將獲得獎金1000元。若2 個號碼對中則為貳獎，將獲得獎金500元。若1 個號碼對中為參獎，將獲得獎金300元。若沒有號碼對中，則為沒中獎，亦沒有獎金。</h3>
   <p>請在下方輸入 3 個數字 (1-10)：</p>
   <input type="text" id="number1" placeholder="號碼1">
@@ -17,6 +17,7 @@
   <button onclick="resetGame()">重新開始</button>
   <p id="result"></p>
   
+  <!--1-->
   <script>
     function startGame() {
       var number1 = parseInt(document.getElementById("number1").value);
@@ -29,7 +30,7 @@
           number2 < 1 || number2 > 10 ||
           number3 < 1 || number3 > 10 ||
           number1 === number2 || number1 === number3 || number2 === number3) {
-        alert("請輸入有效的、不重複的 1-10 之間的數字！");
+        alert("請輸入三個有效、不重複且介於 1-10 之間的數字！");
         resetGame();
         return;
       }
@@ -39,7 +40,8 @@
       displayResult(matchedNumbers);
     }
     
-    function generateWinningNumbers() {
+    <!--1-->
+    function generateWinningNumbers() {    
       var winningNumbers = [];
       
       while (winningNumbers.length < 3) {
@@ -52,6 +54,7 @@
       return winningNumbers;
     }
     
+    <!--5-->
     function checkNumbers(number1, number2, number3, winningNumbers) {
       var matchedNumbers = 0;
       
@@ -70,6 +73,7 @@
       return matchedNumbers;
     }
     
+    <!--2-->
     function displayResult(matchedNumbers) {
       var resultElement = document.getElementById("result");
       
@@ -84,6 +88,7 @@
       }
     }
     
+    <!--5-->
     function resetGame() {
       document.getElementById("number1").value = "";
       document.getElementById("number2").value = "";

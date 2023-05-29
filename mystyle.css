@@ -1,0 +1,15 @@
+h1{
+    text-align:center;
+}
+h2{
+    color:purple;
+    text-align:center;
+    font-size:40px;
+}
+body{
+    background-color: #F0FFF0;
+}
+#t3{
+    height:75px;
+    background-image: linear-gradient(to right, rgba(30,144,255,0.3), rgba(0,0,255,0.8));
+}
